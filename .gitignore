@@ -1,0 +1,4 @@
+model/food11_model.h5
+static/uploads/
+__pycache__/
+*.pyc
