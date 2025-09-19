@@ -1,0 +1,6 @@
+Flask
+tensorflow
+numpy
+pillow
+h5py
+werkzeug

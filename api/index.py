@@ -39,5 +39,7 @@ def index():
 
     return render_template('index.html')
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# Remove app.run()
+
+# This line tells Vercel this is your app's entry point
+app = app
