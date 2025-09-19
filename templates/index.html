@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food Classifier</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+            text-align: center;
+            padding: 40px;
+            background-image: url("{{ url_for('static', filename='images/food_back.jpeg') }}");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            width: 60%;
+            margin: auto;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+
+        img {
+            width: 300px;
+            margin-top: 20px;
+        }
+
+        h2, h3, p {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Food Image Classifier 🍕🍔🍟</h1>
+        <form action="/" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" required><br><br>
+            <input type="submit" value="Predict" style="padding:10px 20px; background-color:#28a745; color:white; border:none; border-radius:5px; cursor:pointer;">
+        </form>
+
+        {% if prediction %}
+            <h2>Prediction: {{ prediction }}</h2>
+            <h3>Food Characteristics:</h3>
+            <p>{{ quality }}</p>
+            <h3>Estimated Calories: {{ calories }} kcal</h3>
+            <img src="{{ user_image }}" alt="Uploaded Food Image">
+        {% endif %}
+    </div>
+</body>
+</html>
